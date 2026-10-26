@@ -6,6 +6,7 @@ public class Program
 {
     private static readonly WebApplicationBuilder s_builder = WebApplication.CreateBuilder();
     private static WebApplication? s_app;
+    private static RouteGroupBuilder? s_api;
 
     public static async Task Main()
     {
@@ -16,7 +17,9 @@ public class Program
 
         s_app.UseHttpsRedirection();
 
-        s_app.MapWarehouseGroup();
+        s_api = s_app.MapGroup("/api/v1");
+
+        s_api.MapWarehouseGroup();
 
         s_app.Run();
     }
