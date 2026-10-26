@@ -26,19 +26,16 @@ public class Program
 
     private static void ImplementOpenApi(WebApplication app)
     {
-        if (app.Environment.IsDevelopment())
-        {
-            // map the OpenAPI endpoint
-            app.MapOpenApi();
+        // map the OpenAPI endpoint
+        app.MapOpenApi();
 
-            // Serve the interactive Swagger UI
-            app.UseSwaggerUI(options =>
-            {
-                options.SwaggerEndpoint(
-                    "/openapi/v1.json",
-                    "API v1"
-                );
-            });
-        }
+        // Serve the interactive Swagger UI
+        app.UseSwaggerUI(options =>
+        {
+            options.SwaggerEndpoint(
+                "/openapi/v1.json",
+                "API v1"
+            );
+        });
     }
 }
