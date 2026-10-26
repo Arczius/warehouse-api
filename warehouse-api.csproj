@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <RootNamespace>warehouse_api</RootNamespace>
+    <RootNamespace>Warehouse</RootNamespace>
 
     <!-- Language features -->
     <Nullable>enable</Nullable>

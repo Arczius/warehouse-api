@@ -1,56 +1,41 @@
-﻿using warehouse_api.RouteGroups;
+﻿namespace Warehouse;
 
-var builder = WebApplication.CreateBuilder(args);
+using Warehouse.RouteGroups;
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+public class Program
 {
-    // map the OpenAPI endpoint
-    app.MapOpenApi();
+    private static WebApplicationBuilder Builder = WebApplication.CreateBuilder();
+    private static WebApplication? App;
 
-    // Serve the interactive Swagger UI
-    app.UseSwaggerUI(options =>
+    public static async Task Main()
     {
-        options.SwaggerEndpoint(
-            "/openapi/v1.json",
-            "API v1"
-        );
-    });
-}
+        Builder.Services.AddOpenApi();
+        App = Builder.Build();
 
-app.UseHttpsRedirection();
+        ImplementOpenApi(App);
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+        App.UseHttpsRedirection();
 
+        App.MapWarehouseGroup();
 
-app.MapWarehouseGroup();
+        App.Run();
+    }
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    private static void ImplementOpenApi(WebApplication app)
+    {
+        if (app.Environment.IsDevelopment())
+        {
+            // map the OpenAPI endpoint
+            app.MapOpenApi();
 
-app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+            // Serve the interactive Swagger UI
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint(
+                    "/openapi/v1.json",
+                    "API v1"
+                );
+            });
+        }
+    }
 }

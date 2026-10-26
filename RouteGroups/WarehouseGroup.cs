@@ -1,4 +1,4 @@
-﻿namespace warehouse_api.RouteGroups;
+﻿namespace Warehouse.RouteGroups;
 
 public static class WarehouseGroup
 {
