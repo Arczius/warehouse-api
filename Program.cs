@@ -4,21 +4,21 @@ using Warehouse.RouteGroups;
 
 public class Program
 {
-    private static WebApplicationBuilder Builder = WebApplication.CreateBuilder();
-    private static WebApplication? App;
+    private static readonly WebApplicationBuilder s_builder = WebApplication.CreateBuilder();
+    private static WebApplication? s_app;
 
     public static async Task Main()
     {
-        Builder.Services.AddOpenApi();
-        App = Builder.Build();
+        s_builder.Services.AddOpenApi();
+        s_app = s_builder.Build();
 
-        ImplementOpenApi(App);
+        ImplementOpenApi(s_app);
 
-        App.UseHttpsRedirection();
+        s_app.UseHttpsRedirection();
 
-        App.MapWarehouseGroup();
+        s_app.MapWarehouseGroup();
 
-        App.Run();
+        s_app.Run();
     }
 
     private static void ImplementOpenApi(WebApplication app)
