@@ -1,5 +1,6 @@
 ﻿namespace Warehouse;
 
+using Warehouse.Data;
 using Warehouse.RouteGroups;
 
 public class Program
@@ -11,6 +12,7 @@ public class Program
     public static async Task Main()
     {
         s_builder.Services.AddOpenApi();
+        s_builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(s_builder.Configuration.GetConnectionString("DefaultConnection")));
         s_app = s_builder.Build();
 
         ImplementOpenApi(s_app);

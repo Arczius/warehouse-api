@@ -3,9 +3,9 @@ services:
     image: postgres:18
     container_name: postgres-warehouse-api
     environment:
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-secret}
     ports:
-      - "${DB_PORT}:5432"
+      - "${DB_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql
   warehouse-api:
@@ -14,12 +14,12 @@ services:
       dockerfile: Dockerfile
     container_name: warehouse-api-container
     ports:
-      - "${API_PORT}:8080"   # host:container, change 5000 if it's also taken
+      - "${API_PORT:-8080}:8080"   # host:container, change 5000 if it's also taken
     environment:
-      ConnectionStrings__DefaultConnection: Host=db;Port=5432;Database=Warehouse;Username=postgres;Password=${POSTGRES_PASSWORD}
-      ASPNETCORE_ENVIRONMENT: Development   # optional, enables /openapi/v1.json
+      ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=warehouse;Username=postgres;Password=${DB_PASSWORD:-secret}"
+      ASPNETCORE_ENVIRONMENT: ${ASP_ENVIRONMENT:-Development}
+    restart: unless-stopped
     depends_on:
     - db
-    restart: unless-stopped
 volumes:
   postgres_data:
