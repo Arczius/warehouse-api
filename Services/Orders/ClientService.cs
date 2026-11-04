@@ -35,7 +35,7 @@ public class ClientService : IClientService
             ZipCode = dto.ZipCode,
             Province = dto.Province,
             Country = dto.Country,
-            Contact = dto.Contact,
+            ContactName = dto.ContactName,
             ContactPhone = dto.ContactPhone,
             ContactEmail = dto.ContactEmail,
             CreatedAt = dto.CreatedAt,
@@ -70,7 +70,7 @@ public class ClientService : IClientService
         client.ZipCode = dto.ZipCode;
         client.Province = dto.Province;
         client.Country = dto.Country;
-        client.Contact = dto.Contact;
+        client.ContactName = dto.ContactName;
         client.ContactPhone = dto.ContactPhone;
         client.ContactEmail = dto.ContactEmail;
         client.CreatedAt = dto.CreatedAt;
@@ -89,7 +89,7 @@ public class ClientService : IClientService
         ZipCode = client.ZipCode,
         Province = client.Province,
         Country = client.Country,
-        Contact = client.Contact,
+        ContactName = client.ContactName,
         ContactPhone = client.ContactPhone,
         ContactEmail = client.ContactEmail,
         CreatedAt = client.CreatedAt,
