@@ -1,6 +1,6 @@
-﻿using Warehouse.Auth;
+﻿namespace Warehouse.Data;
 
-namespace Warehouse.Data;
+using Models.Auth;
 
 public class AppDbContext : DbContext
 {
@@ -8,6 +8,7 @@ public class AppDbContext : DbContext
 
     public DbSet<User> Users => Set<User>();
     public DbSet<ApiEnd> Endpoints => Set<ApiEnd>();
+    public DbSet<Acces> Acces => Set<Acces>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
