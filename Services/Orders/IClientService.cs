@@ -1,6 +1,6 @@
 namespace Warehouse.Services.Orders;
 
-using Warehouse.Dtos.Orders;
+using Dtos.Orders;
 
 public interface IClientService
 {

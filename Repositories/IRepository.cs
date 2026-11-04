@@ -1,6 +1,6 @@
 namespace Warehouse.Repositories;
 
-using Warehouse.Models;
+using Models;
 
 public interface IRepository<T> where T : class, IEntity
 {

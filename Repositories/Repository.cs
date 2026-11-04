@@ -1,7 +1,7 @@
 namespace Warehouse.Repositories;
 
-using Warehouse.Data;
-using Warehouse.Models;
+using Data;
+using Models;
 using Microsoft.EntityFrameworkCore;
 
 public class Repository<T> : IRepository<T> where T : class, IEntity

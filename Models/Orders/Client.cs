@@ -1,1 +1,1 @@
-﻿namespace Warehouse.Orders;
+﻿namespace Warehouse.Models.Orders;

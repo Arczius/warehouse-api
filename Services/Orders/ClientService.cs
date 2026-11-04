@@ -1,8 +1,8 @@
 namespace Warehouse.Services.Orders;
 
-using Warehouse.Dtos.Orders;
-using Warehouse.Orders;
-using Warehouse.Repositories;
+using Dtos.Orders;
+using Models.Orders;
+using Repositories;
 
 public class ClientService : IClientService
 {
