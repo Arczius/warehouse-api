@@ -1,4 +1,4 @@
-﻿namespace Warehouse.Auth;
+﻿namespace Warehouse.Models.Auth;
 
 [Table("User")]
 public class User
