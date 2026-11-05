@@ -4,6 +4,7 @@ using Models.Auth;
 using Models.Orders;
 using Models.Warehouses;
 using Models.Products;
+using Models.Suppliers;
 
 public class AppDbContext : DbContext
 {
@@ -18,6 +19,10 @@ public class AppDbContext : DbContext
     public DbSet<ItemGroup> ItemGroups => Set<ItemGroup>();
     public DbSet<ItemLine> ItemLines => Set<ItemLine>();
     public DbSet<ItemType> ItemTypes => Set<ItemType>();
+    public DbSet<Item> Items => Set<Item>();
+    public DbSet<Supplier> Suppliers => Set<Supplier>();
+    public DbSet<Location> Locations => Set<Location>();
+    public DbSet<Inventory> Inventories => Set<Inventory>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
