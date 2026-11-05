@@ -2,6 +2,7 @@
 
 using Models.Auth;
 using Models.Orders;
+using Models.Warehouses;
 
 public class AppDbContext : DbContext
 {
@@ -11,6 +12,8 @@ public class AppDbContext : DbContext
     public DbSet<ApiEnd> Endpoints => Set<ApiEnd>();
     public DbSet<Acces> Acces => Set<Acces>();
     public DbSet<Client> Clients => Set<Client>();
+    public DbSet<Order> Orders => Set<Order>();
+    public DbSet<Warehouse> Warehouses => Set<Warehouse>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
