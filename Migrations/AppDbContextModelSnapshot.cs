@@ -198,6 +198,35 @@ namespace Warehouse.Migrations
                     b.ToTable("Order");
                 });
 
+            modelBuilder.Entity("Warehouse.Models.Orders.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ItemId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("integer");
+
+                    b.Property<float>("UnitPrice")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ItemId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderItem");
+                });
+
             modelBuilder.Entity("Warehouse.Models.Products.Item", b =>
                 {
                     b.Property<int>("Id")
@@ -358,6 +387,83 @@ namespace Warehouse.Migrations
                     b.ToTable("ItemType");
                 });
 
+            modelBuilder.Entity("Warehouse.Models.Shipments.Shipment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CarrierName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("PaymentType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Reference")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("ShipmentDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("ShipmentMethod")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ShipmentStatus")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ShipmentType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("Shipment");
+                });
+
+            modelBuilder.Entity("Warehouse.Models.Shipments.ShipmentItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ItemId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ShipmentId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ItemId");
+
+                    b.HasIndex("ShipmentId");
+
+                    b.ToTable("ShipmentItem");
+                });
+
             modelBuilder.Entity("Warehouse.Models.Suppliers.Supplier", b =>
                 {
                     b.Property<int>("Id")
@@ -415,6 +521,69 @@ namespace Warehouse.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Supplier");
+                });
+
+            modelBuilder.Entity("Warehouse.Models.Transfers.Transfer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("FromLocationId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Reference")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("ToLocationId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("TransferStatus")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdateAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FromLocationId");
+
+                    b.HasIndex("ToLocationId");
+
+                    b.ToTable("Transfer");
+                });
+
+            modelBuilder.Entity("Warehouse.Models.Transfers.TransferItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ItemId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TransferId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ItemId");
+
+                    b.HasIndex("TransferId");
+
+                    b.ToTable("TransferItem");
                 });
 
             modelBuilder.Entity("Warehouse.Models.Warehouses.Inventory", b =>
@@ -591,6 +760,25 @@ namespace Warehouse.Migrations
                     b.Navigation("Warehouse");
                 });
 
+            modelBuilder.Entity("Warehouse.Models.Orders.OrderItem", b =>
+                {
+                    b.HasOne("Warehouse.Models.Products.Item", "Item")
+                        .WithMany()
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Warehouse.Models.Orders.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Item");
+
+                    b.Navigation("Order");
+                });
+
             modelBuilder.Entity("Warehouse.Models.Products.Item", b =>
                 {
                     b.HasOne("Warehouse.Models.Products.ItemGroup", "ItemGroup")
@@ -624,6 +812,74 @@ namespace Warehouse.Migrations
                     b.Navigation("ItemType");
 
                     b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("Warehouse.Models.Shipments.Shipment", b =>
+                {
+                    b.HasOne("Warehouse.Models.Orders.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("Warehouse.Models.Shipments.ShipmentItem", b =>
+                {
+                    b.HasOne("Warehouse.Models.Products.Item", "Item")
+                        .WithMany()
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Warehouse.Models.Shipments.Shipment", "Shipment")
+                        .WithMany()
+                        .HasForeignKey("ShipmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Item");
+
+                    b.Navigation("Shipment");
+                });
+
+            modelBuilder.Entity("Warehouse.Models.Transfers.Transfer", b =>
+                {
+                    b.HasOne("Warehouse.Models.Warehouses.Location", "FromLocation")
+                        .WithMany()
+                        .HasForeignKey("FromLocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Warehouse.Models.Warehouses.Location", "ToLocation")
+                        .WithMany()
+                        .HasForeignKey("ToLocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FromLocation");
+
+                    b.Navigation("ToLocation");
+                });
+
+            modelBuilder.Entity("Warehouse.Models.Transfers.TransferItem", b =>
+                {
+                    b.HasOne("Warehouse.Models.Products.Item", "Item")
+                        .WithMany()
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Warehouse.Models.Transfers.Transfer", "Transfer")
+                        .WithMany()
+                        .HasForeignKey("TransferId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Item");
+
+                    b.Navigation("Transfer");
                 });
 
             modelBuilder.Entity("Warehouse.Models.Warehouses.Inventory", b =>

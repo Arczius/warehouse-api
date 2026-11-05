@@ -5,6 +5,8 @@ using Models.Orders;
 using Models.Warehouses;
 using Models.Products;
 using Models.Suppliers;
+using Models.Transfers;
+using Models.Shipments;
 
 public class AppDbContext : DbContext
 {
@@ -23,6 +25,11 @@ public class AppDbContext : DbContext
     public DbSet<Supplier> Suppliers => Set<Supplier>();
     public DbSet<Location> Locations => Set<Location>();
     public DbSet<Inventory> Inventories => Set<Inventory>();
+    public DbSet<Transfer> Transfers => Set<Transfer>();
+    public DbSet<TransferItem> TransferItems => Set<TransferItem>();
+    public DbSet<OrderItem> OrderItems => Set<OrderItem>();
+    public DbSet<Shipment> Shipments => Set<Shipment>();
+    public DbSet<ShipmentItem> ShipmentItems => Set<ShipmentItem>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
