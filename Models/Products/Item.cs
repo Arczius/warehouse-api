@@ -1,7 +1,5 @@
 ﻿namespace Warehouse.Models.Products;
 
-using System.Diagnostics.Contracts;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Models.Suppliers;
 
 [Table("Item")]
