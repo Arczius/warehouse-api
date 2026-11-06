@@ -12,8 +12,8 @@ using Warehouse.Data;
 namespace Warehouse.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261106110814_DBFix")]
-    partial class DBFix
+    [Migration("20261106122221_InitialClean")]
+    partial class InitialClean
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
