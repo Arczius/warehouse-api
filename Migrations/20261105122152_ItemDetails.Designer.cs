@@ -9,7 +9,7 @@ using CargoHub.Data;
 
 #nullable disable
 
-namespace Warehouse.Migrations
+namespace CargoHub.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20261105122152_ItemDetails")]
