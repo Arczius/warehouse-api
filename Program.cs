@@ -1,6 +1,7 @@
 ﻿namespace Warehouse;
 
-using Warehouse.RouteGroups;
+using Data;
+using RouteGroups;
 
 public class Program
 {
@@ -11,7 +12,9 @@ public class Program
     public static async Task Main()
     {
         s_builder.Services.AddOpenApi();
+        s_builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(s_builder.Configuration.GetConnectionString("DefaultConnection")));
         s_app = s_builder.Build();
+        await RunMigrations();
 
         ImplementOpenApi(s_app);
 
@@ -37,5 +40,18 @@ public class Program
                 "API v1"
             );
         });
+    }
+
+    private static async Task RunMigrations()
+    {
+        if (s_app == null)
+        {
+            return;
+        }
+        var scope = s_app.Services.CreateScope();
+        var db = scope.ServiceProvider
+            .GetRequiredService<AppDbContext>();
+
+        await db.Database.MigrateAsync();
     }
 }
