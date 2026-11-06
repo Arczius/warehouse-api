@@ -1,4 +1,4 @@
-﻿namespace Warehouse.Models;
+﻿namespace CargoHub.Models;
 
 public interface IEntity
 {
