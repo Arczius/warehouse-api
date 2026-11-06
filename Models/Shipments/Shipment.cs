@@ -26,7 +26,7 @@ public class Shipment : IEntity
     public string CarrierName { get; set; } = null!;
 
     [Required]
-    public string ShipmentMethod { get; set; } = null!;
+    public string ShippingMethod { get; set; } = null!;
 
     [Required]
     public string PaymentType { get; set; } = null!;

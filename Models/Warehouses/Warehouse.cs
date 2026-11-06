@@ -16,6 +16,9 @@ public class Warehouse : IEntity
     public string Address { get; set; } = null!;
 
     [Required]
+    public string City { get; set; } = null!;
+
+    [Required]
     public string ZipCode { get; set; } = null!;
 
     [Required]
@@ -35,5 +38,5 @@ public class Warehouse : IEntity
 
     public DateTime CreatedAt { get; set; }
 
-    public DateTime UpdateAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
 }

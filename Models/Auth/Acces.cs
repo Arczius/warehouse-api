@@ -1,8 +1,8 @@
 ﻿namespace Warehouse.Models.Auth;
 
-[Table("Acces")]
+[Table("Access")]
 [PrimaryKey(nameof(UserId), nameof(ApiEndId))]
-public class Acces
+public class Access
 {
     public string UserId { get; set; } = null!;
     public User User { get; set; } = null!;

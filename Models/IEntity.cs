@@ -1,4 +1,4 @@
-namespace Warehouse.Models;
+﻿namespace Warehouse.Models;
 
 public interface IEntity
 {
