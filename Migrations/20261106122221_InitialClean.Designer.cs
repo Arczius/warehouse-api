@@ -12,8 +12,8 @@ using CargoHub.Data;
 namespace CargoHub.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261105140450_TransShipment")]
-    partial class TransShipment
+    [Migration("20261106122221_InitialClean")]
+    partial class InitialClean
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace CargoHub.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Warehouse.Models.Auth.Acces", b =>
+            modelBuilder.Entity("Warehouse.Models.Auth.Access", b =>
                 {
                     b.Property<string>("UserId")
                         .HasColumnType("text");
@@ -49,7 +49,7 @@ namespace CargoHub.Migrations
 
                     b.HasIndex("ApiEndId");
 
-                    b.ToTable("Acces");
+                    b.ToTable("Access");
                 });
 
             modelBuilder.Entity("Warehouse.Models.Auth.ApiEnd", b =>
@@ -129,7 +129,7 @@ namespace CargoHub.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("ZipCode")
@@ -249,9 +249,8 @@ namespace CargoHub.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("CommodityCode")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("CommodityCode")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -419,15 +418,15 @@ namespace CargoHub.Migrations
                     b.Property<DateTime>("ShipmentDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("ShipmentMethod")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("ShipmentStatus")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("ShipmentType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ShippingMethod")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -551,7 +550,7 @@ namespace CargoHub.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -612,7 +611,7 @@ namespace CargoHub.Migrations
                     b.Property<int>("QuantityOrdered")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("ItemId", "LocationId");
@@ -641,7 +640,7 @@ namespace CargoHub.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("WarehouseId")
@@ -663,6 +662,10 @@ namespace CargoHub.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -697,7 +700,7 @@ namespace CargoHub.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("UpdateAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("ZipCode")
@@ -709,7 +712,7 @@ namespace CargoHub.Migrations
                     b.ToTable("Warehouse");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Auth.Acces", b =>
+            modelBuilder.Entity("Warehouse.Models.Auth.Access", b =>
                 {
                     b.HasOne("Warehouse.Models.Auth.ApiEnd", "ApiEnd")
                         .WithMany()

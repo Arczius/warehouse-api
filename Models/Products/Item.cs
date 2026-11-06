@@ -32,8 +32,7 @@ public class Item : IEntity
     [Required]
     public string ModelNumber { get; set; } = null!;
 
-    [Required]
-    public string CommodityCode { get; set; } = null!;
+    public int CommodityCode { get; set; }
 
     public float UnitWeight { get; set; }
 

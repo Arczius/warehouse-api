@@ -14,7 +14,7 @@ public class AppDbContext : DbContext
 
     public DbSet<User> Users => Set<User>();
     public DbSet<ApiEnd> Endpoints => Set<ApiEnd>();
-    public DbSet<Acces> Acces => Set<Acces>();
+    public DbSet<Access> Accesses => Set<Access>();
     public DbSet<Client> Clients => Set<Client>();
     public DbSet<Order> Orders => Set<Order>();
     public DbSet<Warehouse> Warehouses => Set<Warehouse>();
