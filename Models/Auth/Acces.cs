@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-﻿namespace Warehouse.Auth;
-
-[Table("Acces")]
-public class Acces
-{
-
-=======
-﻿namespace Warehouse.Models.Auth;
+namespace Warehouse.Models.Auth;
 
 [Table("Acces")]
 [PrimaryKey(nameof(UserId), nameof(ApiEndId))]
@@ -25,5 +17,4 @@ public class Acces
     public bool CanPut { get; set; }
 
     public bool CanDelete { get; set; }
->>>>>>> origin/Development
 }

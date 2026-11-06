@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-﻿namespace Warehouse.Orders;
-=======
 ﻿namespace Warehouse.Models.Orders;
 
 using Models.Products;
@@ -21,4 +18,3 @@ public class OrderItem : IEntity
 
     public float UnitPrice { get; set; }
 }
->>>>>>> origin/Development

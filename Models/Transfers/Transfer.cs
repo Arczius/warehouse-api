@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-﻿namespace Warehouse.Transfers;
-=======
-﻿namespace Warehouse.Models.Transfers;
+namespace Warehouse.Models.Transfers;
 
 using Models.Warehouses;
 
@@ -27,4 +24,3 @@ public class Transfer : IEntity
 
     public DateTime UpdateAt { get; set; }
 }
->>>>>>> origin/Development

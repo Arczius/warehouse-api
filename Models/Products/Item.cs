@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-﻿namespace Warehouse.Products;
-=======
-﻿namespace Warehouse.Models.Products;
+namespace Warehouse.Models.Products;
 
 using Models.Suppliers;
 
@@ -56,4 +53,3 @@ public class Item : IEntity
 
     public DateTime UpdatedAt { get; set; }
 }
->>>>>>> origin/Development

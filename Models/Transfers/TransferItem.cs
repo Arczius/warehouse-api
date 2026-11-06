@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-﻿namespace Warehouse.Transfers;
-=======
-﻿namespace Warehouse.Models.Transfers;
+namespace Warehouse.Models.Transfers;
 
 using Models.Products;
 
@@ -19,4 +16,3 @@ public class TransferItem : IEntity
 
     public int Amount { get; set; }
 }
->>>>>>> origin/Development

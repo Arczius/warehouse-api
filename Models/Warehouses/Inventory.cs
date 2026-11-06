@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-﻿namespace Warehouse.Warehouses;
-=======
-﻿namespace Warehouse.Models.Warehouses;
+namespace Warehouse.Models.Warehouses;
 
 using Models.Products;
 
@@ -27,4 +24,3 @@ public class Inventory
 
     public DateTime UpdateAt { get; set; }
 }
->>>>>>> origin/Development

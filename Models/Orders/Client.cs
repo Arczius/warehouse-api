@@ -1,6 +1,4 @@
 ﻿namespace Warehouse.Models.Orders;
-<<<<<<< HEAD
-=======
 
 [Table("Client")]
 public class Client : IEntity
@@ -39,4 +37,3 @@ public class Client : IEntity
 
     public DateTime UpdateAt { get; set; }
 }
->>>>>>> origin/Development

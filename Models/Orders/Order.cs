@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-﻿namespace Warehouse.Orders;
-=======
-﻿namespace Warehouse.Models.Orders;
+namespace Warehouse.Models.Orders;
 
 using Models.Warehouses;
 
@@ -42,4 +39,3 @@ public class Order : IEntity
 
     public DateTime UpdatedAt { get; set; }
 }
->>>>>>> origin/Development

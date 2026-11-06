@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-﻿namespace Warehouse.Suppliers;
-=======
-﻿namespace Warehouse.Models.Suppliers;
+namespace Warehouse.Models.Suppliers;
 
 [Table("Supplier")]
 public class Supplier : IEntity
@@ -43,4 +40,3 @@ public class Supplier : IEntity
 
     public DateTime UpdatedAt { get; set; }
 }
->>>>>>> origin/Development

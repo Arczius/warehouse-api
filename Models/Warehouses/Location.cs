@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-﻿namespace Warehouse.Warehouses;
-=======
-﻿namespace Warehouse.Models.Warehouses;
+namespace Warehouse.Models.Warehouses;
 
 [Table("Location")]
 public class Location : IEntity
@@ -22,4 +19,3 @@ public class Location : IEntity
 
     public DateTime UpdateAt { get; set; }
 }
->>>>>>> origin/Development

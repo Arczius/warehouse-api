@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-﻿namespace Warehouse.Shipments;
-=======
-﻿namespace Warehouse.Models.Shipments;
+namespace Warehouse.Models.Shipments;
 
 using Models.Products;
 
@@ -19,4 +16,3 @@ public class ShipmentItem : IEntity
 
     public int Amount { get; set; }
 }
->>>>>>> origin/Development
