@@ -1,7 +1,7 @@
 ﻿namespace Warehouse.Models.Orders;
 
 [Table("Client")]
-public class Client
+public class Client : IEntity
 {
     [Key]
     public int Id { get; set; }

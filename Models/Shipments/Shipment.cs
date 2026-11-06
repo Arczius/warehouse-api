@@ -3,7 +3,7 @@
 using Models.Orders;
 
 [Table("Shipment")]
-public class Shipment
+public class Shipment : IEntity
 {
     [Key]
     public int Id { get; set; }

@@ -1,7 +1,7 @@
 ﻿namespace Warehouse.Models.Products;
 
 [Table("ItemType")]
-public class ItemType
+public class ItemType : IEntity
 {
     [Key]
     public int Id { get; set; }

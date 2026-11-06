@@ -1,10 +1,9 @@
 ﻿namespace Warehouse.Models.Transfers;
 
-using System.Runtime.Versioning;
 using Models.Warehouses;
 
 [Table("Transfer")]
-public class Transfer
+public class Transfer : IEntity
 {
     [Key]
     public int Id { get; set; }

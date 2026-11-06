@@ -1,7 +1,7 @@
 ﻿namespace Warehouse.Models.Suppliers;
 
 [Table("Supplier")]
-public class Supplier
+public class Supplier : IEntity
 {
     [Key]
     public int Id { get; set; }

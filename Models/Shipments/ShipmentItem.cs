@@ -3,7 +3,7 @@
 using Models.Products;
 
 [Table("ShipmentItem")]
-public class ShipmentItem
+public class ShipmentItem : IEntity
 {
     [Key]
     public int Id { get; set; }

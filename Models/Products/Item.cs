@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Models.Suppliers;
 
 [Table("Item")]
-public class Item
+public class Item : IEntity
 {
     [Key]
     public int Id { get; set; }

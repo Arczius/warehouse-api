@@ -1,7 +1,7 @@
 ﻿namespace Warehouse.Models.Products;
 
 [Table("ItemGroup")]
-public class ItemGroup
+public class ItemGroup : IEntity
 {
     [Key]
     public int Id { get; set; }
