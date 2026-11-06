@@ -7,8 +7,8 @@ public record OrderDTO
     public int WarehouseId { get; init; }
     public int ShipToClientId { get; init; }
     public int BillToClientId { get; init; }
-    public string OrderDate { get; init; } = string.Empty;
-    public string RequestDate { get; init; } = string.Empty;
+    public DateTime OrderDate { get; init; }
+    public DateTime RequestDate { get; init; }
     public string Reference { get; init; } = string.Empty;
     public string OrderNumber { get; init; } = string.Empty;
     public string OrderStatus { get; init; } = string.Empty;
@@ -23,8 +23,8 @@ public record CreateOrderDTO
     public int WarehouseId { get; init; }
     public int ShipToClientId { get; init; }
     public int BillToClientId { get; init; }
-    public string OrderDate { get; init; } = string.Empty;
-    public string RequestDate { get; init; } = string.Empty;
+    public DateTime OrderDate { get; init; }
+    public DateTime RequestDate { get; init; }
     public string Reference { get; init; } = string.Empty;
     public string OrderNumber { get; init; } = string.Empty;
     public string OrderStatus { get; init; } = string.Empty;
@@ -39,8 +39,8 @@ public record UpdateOrderDTO
     public int WarehouseId { get; init; }
     public int ShipToClientId { get; init; }
     public int BillToClientId { get; init; }
-    public string OrderDate { get; init; } = string.Empty;
-    public string RequestDate { get; init; } = string.Empty;
+    public DateTime OrderDate { get; init; }
+    public DateTime RequestDate { get; init; }
     public string Reference { get; init; } = string.Empty;
     public string OrderNumber { get; init; } = string.Empty;
     public string OrderStatus { get; init; } = string.Empty;
