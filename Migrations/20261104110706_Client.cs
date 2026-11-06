@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Warehouse.Migrations
+namespace CargoHub.Migrations
 {
     /// <inheritdoc />
     public partial class Client : Migration

@@ -1,4 +1,4 @@
-﻿namespace Warehouse;
+﻿namespace CargoHub;
 
 using Data;
 using RouteGroups;

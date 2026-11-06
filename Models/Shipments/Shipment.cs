@@ -1,4 +1,4 @@
-﻿namespace Warehouse.Models.Shipments;
+﻿namespace CargoHub.Models.Shipments;
 
 using Models.Orders;
 

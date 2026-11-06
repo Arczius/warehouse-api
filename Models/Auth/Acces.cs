@@ -1,4 +1,4 @@
-﻿namespace Warehouse.Models.Auth;
+﻿namespace CargoHub.Models.Auth;
 
 [Table("Acces")]
 [PrimaryKey(nameof(UserId), nameof(ApiEndId))]

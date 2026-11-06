@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using Warehouse.Data;
+using CargoHub.Data;
 
 #nullable disable
 
-namespace Warehouse.Migrations
+namespace CargoHub.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20261104110910_Client_fixed")]

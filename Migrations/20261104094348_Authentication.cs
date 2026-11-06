@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Warehouse.Migrations
+namespace CargoHub.Migrations
 {
     /// <inheritdoc />
     public partial class Authentication : Migration
