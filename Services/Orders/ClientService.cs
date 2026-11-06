@@ -59,7 +59,7 @@ public class ClientService : IClientService
         return true;
     }
 
-    public async Task<ClientDTO?> UpdateAsync(int id UpdateClientDTO dto)
+    public async Task<ClientDTO?> UpdateAsync(int id, UpdateClientDTO dto)
     {
         var client = await _clients.GetByIdAsync(id);
         if (client is null) return null;
