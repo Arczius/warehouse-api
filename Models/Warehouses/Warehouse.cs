@@ -16,6 +16,9 @@ public class Warehouse : IEntity
     public string Address { get; set; } = null!;
 
     [Required]
+    public string City { get; set; } = null!;
+
+    [Required]
     public string ZipCode { get; set; } = null!;
 
     [Required]
