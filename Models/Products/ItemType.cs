@@ -1,4 +1,4 @@
-namespace Warehouse.Models.Products;
+﻿namespace Warehouse.Models.Products;
 
 [Table("ItemType")]
 public class ItemType : IEntity

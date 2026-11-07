@@ -1,4 +1,4 @@
-namespace Warehouse.Models.Warehouses;
+﻿namespace Warehouse.Models.Warehouses;
 
 using Models.Products;
 

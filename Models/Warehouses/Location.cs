@@ -1,4 +1,4 @@
-namespace Warehouse.Models.Warehouses;
+﻿namespace Warehouse.Models.Warehouses;
 
 [Table("Location")]
 public class Location : IEntity

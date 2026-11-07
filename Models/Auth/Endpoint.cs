@@ -1,6 +1,6 @@
-﻿namespace Warehouse.Models.Auth;
+﻿namespace Warehouse.Auth;
 
-[Table("ApiEnd")]
+[Table("Endpoint")]
 public class ApiEnd
 {
     [Key]
