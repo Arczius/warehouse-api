@@ -1,4 +1,5 @@
-﻿using Warehouse.Models;
+﻿using System.Linq.Expressions;
+using Warehouse.Models;
 using Warehouse.Repositories;
 
 namespace Warehouse.RouteGroups;
@@ -28,6 +29,25 @@ public static class CrudRouteGroup
 
         return group;
     }
+
+    public static RouteGroupBuilder MapGetSubResource<TMain, TSub>(
+    this RouteGroupBuilder group,
+    string route,
+    Func<int, Expression<Func<TSub, bool>>> belongsToMain)
+    where TMain : class, IEntity
+    where TSub : class, IEntity
+    {
+        group.MapGet(route, async (int id, IRepository<TMain> mainRepo, IRepository<TSub> subRepo) =>
+        {
+            var existingEntity = await mainRepo.GetByIdAsync(id);
+            if (existingEntity is null) return Results.NotFound();
+            var resource = await subRepo.FindAsync(belongsToMain(id));
+            return Results.Ok(resource);
+        });
+
+        return group;
+    }
+
 
     public static RouteGroupBuilder Post<T>(this RouteGroupBuilder group, string route, string resource) where T : class, IEntity
     {
