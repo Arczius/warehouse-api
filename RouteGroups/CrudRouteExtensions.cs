@@ -41,5 +41,17 @@ public static class CrudRouteGroup
         return group;
     }
 
+    public static RouteGroupBuilder Delete<T>(this RouteGroupBuilder group, string route) where T : class, IEntity
+    {
+        group.MapDelete(route, async (int id, IRepository<T> repo) =>
+        {
+            var existingEntity = await repo.GetByIdAsync(id);
+            if (existingEntity is null) return Results.NotFound();
+            repo.Delete(existingEntity);
+            await repo.SaveChangesAsync();
+            return Results.NoContent();
+        });
 
+        return group;
+    }
 }
