@@ -1,1 +1,1 @@
-﻿namespace Warehouse.RouteGroups;
+﻿namespace CargoHub.RouteGroups;
