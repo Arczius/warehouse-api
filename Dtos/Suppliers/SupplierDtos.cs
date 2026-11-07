@@ -1,4 +1,4 @@
-namespace Warehouse.Dtos.Suppliers;
+﻿namespace CargoHub.Dtos.Suppliers;
 
 public record SupplierDTO
 {

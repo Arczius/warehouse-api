@@ -1,4 +1,4 @@
-namespace Warehouse.Repositories;
+﻿namespace CargoHub.Repositories;
 
 using Models;
 
