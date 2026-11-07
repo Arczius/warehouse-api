@@ -7,7 +7,6 @@ public class Program
 {
     private static readonly WebApplicationBuilder s_builder = WebApplication.CreateBuilder();
     private static WebApplication? s_app;
-    private static RouteGroupBuilder? s_api;
 
     public static async Task Main()
     {
