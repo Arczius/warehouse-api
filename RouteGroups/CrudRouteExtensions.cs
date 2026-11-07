@@ -29,4 +29,17 @@ public static class CrudRouteGroup
         return group;
     }
 
+    public static RouteGroupBuilder Post<T>(this RouteGroupBuilder group, string route, string resource) where T : class, IEntity
+    {
+        group.MapPost(route, async (T entity, IRepository<T> repo) =>
+        {
+            repo.Add(entity);
+            await repo.SaveChangesAsync();
+            return Results.Created($"/api/v1/{resource}/{entity.Id}", entity);
+        });
+
+        return group;
+    }
+
+
 }
