@@ -16,4 +16,17 @@ public static class CrudRouteGroup
         return group;
     }
 
+    public static RouteGroupBuilder MapGetById<T>(this RouteGroupBuilder group, string route) where T : class, IEntity
+    {
+        group.MapGet(route, async (int id, IRepository<T> repo) =>
+        {
+            var existingEntity = await repo.GetByIdAsync(id);
+            return existingEntity is null
+            ? Results.NotFound()
+            : Results.Ok(existingEntity);
+        });
+
+        return group;
+    }
+
 }
