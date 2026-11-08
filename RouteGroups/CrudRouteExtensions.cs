@@ -4,7 +4,7 @@ using Warehouse.Repositories;
 
 namespace Warehouse.RouteGroups;
 
-public static class CrudRouteGroup
+public static class CrudRouteExtension
 {
     public static RouteGroupBuilder MapGetAll<T>(this RouteGroupBuilder group, string route) where T : class, IEntity
     {
