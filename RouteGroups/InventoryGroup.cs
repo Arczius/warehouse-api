@@ -1,5 +1,4 @@
-﻿using Warehouse.Repositories;
-using Warehouse.Models.Warehouses;
+﻿using Warehouse.Models.Warehouses;
 using Warehouse.Data;
 
 namespace Warehouse.RouteGroups;
