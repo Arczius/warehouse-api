@@ -2,17 +2,18 @@
 
 using Data;
 using RouteGroups;
+using Warehouse.Repositories;
 
 public class Program
 {
     private static readonly WebApplicationBuilder s_builder = WebApplication.CreateBuilder();
     private static WebApplication? s_app;
-    private static RouteGroupBuilder? s_api;
 
     public static async Task Main()
     {
         s_builder.Services.AddOpenApi();
         s_builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(s_builder.Configuration.GetConnectionString("DefaultConnection")));
+        s_builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         s_app = s_builder.Build();
         await RunMigrations();
 
@@ -20,9 +21,18 @@ public class Program
 
         s_app.UseHttpsRedirection();
 
-        s_api = s_app.MapGroup("/api/v1");
-
-        s_api.MapWarehouseGroup();
+        s_app.MapWarehouseGroup();
+        s_app.MapInventoryGroup();
+        s_app.MapLocationGroup();
+        s_app.MapTransferGroup();
+        s_app.MapSupplierGroup();
+        s_app.MapShipmentsGroup();
+        s_app.MapOrderGroup();
+        s_app.MapClientGroup();
+        s_app.MapItemGroup();
+        s_app.MapItemGroupGroup();
+        s_app.MapItemLineGroup();
+        s_app.MapItemTypeGroup();
 
         s_app.Run();
     }

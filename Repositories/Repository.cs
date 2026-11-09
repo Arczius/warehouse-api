@@ -1,7 +1,8 @@
-namespace Warehouse.Repositories;
+﻿namespace Warehouse.Repositories;
 
 using Data;
 using Models;
+using System.Linq.Expressions;
 
 public class Repository<T> : IRepository<T> where T : class, IEntity
 {
@@ -19,6 +20,11 @@ public class Repository<T> : IRepository<T> where T : class, IEntity
     public async Task<T?> GetByIdAsync(int id)
     {
         return await _context.Set<T>().FirstOrDefaultAsync(e => e.Id == id);
+    }
+
+    public async Task<List<T>> FindAsync(Expression<Func<T, bool>> filter)
+    {
+        return await _context.Set<T>().Where(filter).ToListAsync();
     }
 
     public void Add(T entity) => _context.Set<T>().Add(entity);
