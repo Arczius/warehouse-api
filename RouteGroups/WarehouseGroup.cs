@@ -1,4 +1,4 @@
-﻿namespace Warehouse.RouteGroups;
+﻿namespace CargoHub.RouteGroups;
 
 public static class WarehouseGroup
 {

@@ -1,4 +1,4 @@
-namespace Warehouse.Services.Products;
+﻿namespace CargoHub.Services.Products;
 
 using Dtos.Products;
 using Models.Products;

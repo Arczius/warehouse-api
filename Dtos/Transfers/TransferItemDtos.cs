@@ -1,4 +1,4 @@
-namespace Warehouse.Dtos.Transfers;
+﻿namespace CargoHub.Dtos.Transfers;
 
 public record TransferItemDTO
 {

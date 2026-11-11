@@ -1,7 +1,7 @@
-﻿namespace Warehouse.Auth;
+﻿namespace CargoHub.Models.Auth;
 
 [Table("Endpoint")]
-public class ApiEnd
+public class Endpoint
 {
     [Key]
     public int Id { get; set; }
