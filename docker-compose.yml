@@ -1,14 +1,20 @@
 services:
   db:
-    image: postgres:18
+    image: postgres:18-alpine
     container_name: postgres-warehouse-api
     environment:
+      POSTGRES_DB: ${DB_NAME:-warehouse}
       POSTGRES_PASSWORD: ${DB_PASSWORD:-secret}
       POSTGRES_USER: ${DB_USERNAME:-john}
     ports:
       - "${DB_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME:-john} -d ${DB_NAME:-warehouse}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
   warehouse-api:
     build:
@@ -18,10 +24,12 @@ services:
     ports:
       - "${API_PORT:-8080}:8080"
     environment:
-      ConnectionStrings__DefaultConnection: "Host=db;Port=${DB_PORT:-5432};Database=warehouse;Username=${DB_USERNAME:-john};Password=${DB_PASSWORD:-secret}"
+      ConnectionStrings__DefaultConnection: "Host=db;Port=${DB_PORT:-5432};Database=${DB_NAME};Username=${DB_USERNAME:-john};Password=${DB_PASSWORD:-secret}"
       ASPNETCORE_ENVIRONMENT: ${ASP_ENVIRONMENT:-Development}
     restart: unless-stopped
     depends_on:
-    - db
+      db:
+        condition: service_healthy
+
 volumes:
   postgres_data:

@@ -1,8 +1,7 @@
-﻿namespace Warehouse;
+﻿namespace CargoHub;
 
 using Data;
-using RouteGroups;
-using Warehouse.Repositories;
+using CargoHub.Repositories;
 
 public class Program
 {
@@ -20,19 +19,6 @@ public class Program
         ImplementOpenApi(s_app);
 
         s_app.UseHttpsRedirection();
-
-        s_app.MapWarehouseGroup();
-        s_app.MapInventoryGroup();
-        s_app.MapLocationGroup();
-        s_app.MapTransferGroup();
-        s_app.MapSupplierGroup();
-        s_app.MapShipmentsGroup();
-        s_app.MapOrderGroup();
-        s_app.MapClientGroup();
-        s_app.MapItemGroup();
-        s_app.MapItemGroupGroup();
-        s_app.MapItemLineGroup();
-        s_app.MapItemTypeGroup();
 
         s_app.Run();
     }

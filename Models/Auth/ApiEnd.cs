@@ -1,4 +1,4 @@
-﻿namespace Warehouse.Models.Auth;
+﻿namespace CargoHub.Models.Auth;
 
 [Table("ApiEnd")]
 public class ApiEnd

@@ -1,4 +1,4 @@
-﻿namespace Warehouse.Models.Transfers;
+﻿namespace CargoHub.Models.Transfers;
 
 using Models.Warehouses;
 

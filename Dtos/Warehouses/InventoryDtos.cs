@@ -1,4 +1,4 @@
-namespace Warehouse.Dtos.Warehouses;
+﻿namespace CargoHub.Dtos.Warehouses;
 
 public record InventoryDTO
 {
