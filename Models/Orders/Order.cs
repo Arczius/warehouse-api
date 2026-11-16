@@ -1,6 +1,7 @@
 ﻿namespace CargoHub.Models.Orders;
 
 using Models.Warehouses;
+using Models.Clients;
 
 [Table("Order")]
 public class Order : IEntity
