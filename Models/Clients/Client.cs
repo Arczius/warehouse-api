@@ -1,4 +1,4 @@
-﻿namespace CargoHub.Models.Orders;
+﻿namespace CargoHub.Models.Clients;
 
 [Table("Client")]
 public class Client : IEntity

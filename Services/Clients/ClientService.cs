@@ -1,7 +1,7 @@
-﻿namespace CargoHub.Services.Orders;
+﻿namespace CargoHub.Services.Clients;
 
-using Dtos.Orders;
-using Models.Orders;
+using Dtos.Clients;
+using Models.Clients;
 using Repositories;
 
 public class ClientService : IClientService

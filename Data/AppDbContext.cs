@@ -7,6 +7,7 @@ using Models.Products;
 using Models.Suppliers;
 using Models.Transfers;
 using Models.Shipments;
+using Models.Clients;
 
 public class AppDbContext : DbContext
 {

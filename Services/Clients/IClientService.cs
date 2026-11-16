@@ -1,6 +1,6 @@
-﻿namespace CargoHub.Services.Orders;
+﻿namespace CargoHub.Services.Clients;
 
-using Dtos.Orders;
+using Dtos.Clients;
 
 public interface IClientService
 {
