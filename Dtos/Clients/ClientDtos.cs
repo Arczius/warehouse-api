@@ -1,4 +1,4 @@
-﻿namespace CargoHub.Dtos.Orders;
+﻿namespace CargoHub.Dtos.Clients;
 
 public record ClientDTO
 {
