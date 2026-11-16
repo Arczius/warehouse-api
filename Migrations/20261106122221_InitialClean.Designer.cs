@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using Warehouse.Data;
+using CargoHub.Data;
 
 #nullable disable
 
-namespace Warehouse.Migrations
+namespace CargoHub.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20261106122221_InitialClean")]
@@ -25,7 +25,7 @@ namespace Warehouse.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Warehouse.Models.Auth.Access", b =>
+            modelBuilder.Entity("CargoHub.Models.Auth.Access", b =>
                 {
                     b.Property<string>("UserId")
                         .HasColumnType("text");
@@ -52,7 +52,7 @@ namespace Warehouse.Migrations
                     b.ToTable("Access");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Auth.ApiEnd", b =>
+            modelBuilder.Entity("CargoHub.Models.Auth.ApiEnd", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -72,7 +72,7 @@ namespace Warehouse.Migrations
                     b.ToTable("ApiEnd");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Auth.User", b =>
+            modelBuilder.Entity("CargoHub.Models.Auth.User", b =>
                 {
                     b.Property<string>("ApiKey")
                         .HasColumnType("text");
@@ -86,7 +86,7 @@ namespace Warehouse.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Orders.Client", b =>
+            modelBuilder.Entity("CargoHub.Models.Orders.Client", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -141,7 +141,7 @@ namespace Warehouse.Migrations
                     b.ToTable("Client");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Orders.Order", b =>
+            modelBuilder.Entity("CargoHub.Models.Orders.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -201,7 +201,7 @@ namespace Warehouse.Migrations
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Orders.OrderItem", b =>
+            modelBuilder.Entity("CargoHub.Models.Orders.OrderItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -230,7 +230,7 @@ namespace Warehouse.Migrations
                     b.ToTable("OrderItem");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Products.Item", b =>
+            modelBuilder.Entity("CargoHub.Models.Products.Item", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -308,7 +308,7 @@ namespace Warehouse.Migrations
                     b.ToTable("Item");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Products.ItemGroup", b =>
+            modelBuilder.Entity("CargoHub.Models.Products.ItemGroup", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -335,7 +335,7 @@ namespace Warehouse.Migrations
                     b.ToTable("ItemGroup");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Products.ItemLine", b =>
+            modelBuilder.Entity("CargoHub.Models.Products.ItemLine", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -362,7 +362,7 @@ namespace Warehouse.Migrations
                     b.ToTable("ItemLine");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Products.ItemType", b =>
+            modelBuilder.Entity("CargoHub.Models.Products.ItemType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -389,7 +389,7 @@ namespace Warehouse.Migrations
                     b.ToTable("ItemType");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Shipments.Shipment", b =>
+            modelBuilder.Entity("CargoHub.Models.Shipments.Shipment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -440,7 +440,7 @@ namespace Warehouse.Migrations
                     b.ToTable("Shipment");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Shipments.ShipmentItem", b =>
+            modelBuilder.Entity("CargoHub.Models.Shipments.ShipmentItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -466,7 +466,7 @@ namespace Warehouse.Migrations
                     b.ToTable("ShipmentItem");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Suppliers.Supplier", b =>
+            modelBuilder.Entity("CargoHub.Models.Suppliers.Supplier", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -525,7 +525,7 @@ namespace Warehouse.Migrations
                     b.ToTable("Supplier");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Transfers.Transfer", b =>
+            modelBuilder.Entity("CargoHub.Models.Transfers.Transfer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -562,7 +562,7 @@ namespace Warehouse.Migrations
                     b.ToTable("Transfer");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Transfers.TransferItem", b =>
+            modelBuilder.Entity("CargoHub.Models.Transfers.TransferItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -588,7 +588,7 @@ namespace Warehouse.Migrations
                     b.ToTable("TransferItem");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Warehouses.Inventory", b =>
+            modelBuilder.Entity("CargoHub.Models.Warehouses.Inventory", b =>
                 {
                     b.Property<int>("ItemId")
                         .HasColumnType("integer");
@@ -621,7 +621,7 @@ namespace Warehouse.Migrations
                     b.ToTable("Inventory");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Warehouses.Location", b =>
+            modelBuilder.Entity("CargoHub.Models.Warehouses.Location", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -653,7 +653,7 @@ namespace Warehouse.Migrations
                     b.ToTable("Location");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Warehouses.Warehouse", b =>
+            modelBuilder.Entity("CargoHub.Models.Warehouses.Warehouse", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -712,15 +712,15 @@ namespace Warehouse.Migrations
                     b.ToTable("Warehouse");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Auth.Access", b =>
+            modelBuilder.Entity("CargoHub.Models.Auth.Access", b =>
                 {
-                    b.HasOne("Warehouse.Models.Auth.ApiEnd", "ApiEnd")
+                    b.HasOne("CargoHub.Models.Auth.ApiEnd", "ApiEnd")
                         .WithMany()
                         .HasForeignKey("ApiEndId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warehouse.Models.Auth.User", "User")
+                    b.HasOne("CargoHub.Models.Auth.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -731,27 +731,27 @@ namespace Warehouse.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Orders.Order", b =>
+            modelBuilder.Entity("CargoHub.Models.Orders.Order", b =>
                 {
-                    b.HasOne("Warehouse.Models.Orders.Client", "BillToClient")
+                    b.HasOne("CargoHub.Models.Orders.Client", "BillToClient")
                         .WithMany()
                         .HasForeignKey("BillToClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warehouse.Models.Orders.Client", "Client")
+                    b.HasOne("CargoHub.Models.Orders.Client", "Client")
                         .WithMany()
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warehouse.Models.Orders.Client", "ShipToClient")
+                    b.HasOne("CargoHub.Models.Orders.Client", "ShipToClient")
                         .WithMany()
                         .HasForeignKey("ShipToClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warehouse.Models.Warehouses.Warehouse", "Warehouse")
+                    b.HasOne("CargoHub.Models.Warehouses.Warehouse", "Warehouse")
                         .WithMany()
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -766,15 +766,15 @@ namespace Warehouse.Migrations
                     b.Navigation("Warehouse");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Orders.OrderItem", b =>
+            modelBuilder.Entity("CargoHub.Models.Orders.OrderItem", b =>
                 {
-                    b.HasOne("Warehouse.Models.Products.Item", "Item")
+                    b.HasOne("CargoHub.Models.Products.Item", "Item")
                         .WithMany()
                         .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warehouse.Models.Orders.Order", "Order")
+                    b.HasOne("CargoHub.Models.Orders.Order", "Order")
                         .WithMany()
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -785,27 +785,27 @@ namespace Warehouse.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Products.Item", b =>
+            modelBuilder.Entity("CargoHub.Models.Products.Item", b =>
                 {
-                    b.HasOne("Warehouse.Models.Products.ItemGroup", "ItemGroup")
+                    b.HasOne("CargoHub.Models.Products.ItemGroup", "ItemGroup")
                         .WithMany()
                         .HasForeignKey("ItemGroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warehouse.Models.Products.ItemLine", "ItemLine")
+                    b.HasOne("CargoHub.Models.Products.ItemLine", "ItemLine")
                         .WithMany()
                         .HasForeignKey("ItemLineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warehouse.Models.Products.ItemType", "ItemType")
+                    b.HasOne("CargoHub.Models.Products.ItemType", "ItemType")
                         .WithMany()
                         .HasForeignKey("ItemTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warehouse.Models.Suppliers.Supplier", "Supplier")
+                    b.HasOne("CargoHub.Models.Suppliers.Supplier", "Supplier")
                         .WithMany()
                         .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -820,9 +820,9 @@ namespace Warehouse.Migrations
                     b.Navigation("Supplier");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Shipments.Shipment", b =>
+            modelBuilder.Entity("CargoHub.Models.Shipments.Shipment", b =>
                 {
-                    b.HasOne("Warehouse.Models.Orders.Order", "Order")
+                    b.HasOne("CargoHub.Models.Orders.Order", "Order")
                         .WithMany()
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -831,15 +831,15 @@ namespace Warehouse.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Shipments.ShipmentItem", b =>
+            modelBuilder.Entity("CargoHub.Models.Shipments.ShipmentItem", b =>
                 {
-                    b.HasOne("Warehouse.Models.Products.Item", "Item")
+                    b.HasOne("CargoHub.Models.Products.Item", "Item")
                         .WithMany()
                         .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warehouse.Models.Shipments.Shipment", "Shipment")
+                    b.HasOne("CargoHub.Models.Shipments.Shipment", "Shipment")
                         .WithMany()
                         .HasForeignKey("ShipmentId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -850,15 +850,15 @@ namespace Warehouse.Migrations
                     b.Navigation("Shipment");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Transfers.Transfer", b =>
+            modelBuilder.Entity("CargoHub.Models.Transfers.Transfer", b =>
                 {
-                    b.HasOne("Warehouse.Models.Warehouses.Location", "FromLocation")
+                    b.HasOne("CargoHub.Models.Warehouses.Location", "FromLocation")
                         .WithMany()
                         .HasForeignKey("FromLocationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warehouse.Models.Warehouses.Location", "ToLocation")
+                    b.HasOne("CargoHub.Models.Warehouses.Location", "ToLocation")
                         .WithMany()
                         .HasForeignKey("ToLocationId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -869,15 +869,15 @@ namespace Warehouse.Migrations
                     b.Navigation("ToLocation");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Transfers.TransferItem", b =>
+            modelBuilder.Entity("CargoHub.Models.Transfers.TransferItem", b =>
                 {
-                    b.HasOne("Warehouse.Models.Products.Item", "Item")
+                    b.HasOne("CargoHub.Models.Products.Item", "Item")
                         .WithMany()
                         .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warehouse.Models.Transfers.Transfer", "Transfer")
+                    b.HasOne("CargoHub.Models.Transfers.Transfer", "Transfer")
                         .WithMany()
                         .HasForeignKey("TransferId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -888,15 +888,15 @@ namespace Warehouse.Migrations
                     b.Navigation("Transfer");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Warehouses.Inventory", b =>
+            modelBuilder.Entity("CargoHub.Models.Warehouses.Inventory", b =>
                 {
-                    b.HasOne("Warehouse.Models.Products.Item", "Item")
+                    b.HasOne("CargoHub.Models.Products.Item", "Item")
                         .WithMany()
                         .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Warehouse.Models.Warehouses.Location", "Location")
+                    b.HasOne("CargoHub.Models.Warehouses.Location", "Location")
                         .WithMany()
                         .HasForeignKey("LocationId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -907,9 +907,9 @@ namespace Warehouse.Migrations
                     b.Navigation("Location");
                 });
 
-            modelBuilder.Entity("Warehouse.Models.Warehouses.Location", b =>
+            modelBuilder.Entity("CargoHub.Models.Warehouses.Location", b =>
                 {
-                    b.HasOne("Warehouse.Models.Warehouses.Warehouse", "Warehouse")
+                    b.HasOne("CargoHub.Models.Warehouses.Warehouse", "Warehouse")
                         .WithMany()
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Cascade)

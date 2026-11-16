@@ -1,4 +1,4 @@
-namespace Warehouse.Dtos.Shipments;
+﻿namespace CargoHub.Dtos.Shipments;
 
 public record ShipmentItemDTO
 {

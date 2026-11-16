@@ -1,7 +1,4 @@
-﻿using Warehouse.Models.Warehouses;
-using Warehouse.Repositories;
-
-namespace Warehouse.RouteGroups;
+﻿namespace CargoHub.RouteGroups;
 
 public static class WarehouseGroup
 {

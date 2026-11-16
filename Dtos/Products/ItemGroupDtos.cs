@@ -1,4 +1,4 @@
-namespace Warehouse.Dtos.Products;
+﻿namespace CargoHub.Dtos.Products;
 
 public record ItemGroupDtos
 {

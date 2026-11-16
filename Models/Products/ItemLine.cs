@@ -1,4 +1,4 @@
-﻿namespace Warehouse.Models.Products;
+﻿namespace CargoHub.Models.Products;
 
 [Table("ItemLine")]
 public class ItemLine : IEntity

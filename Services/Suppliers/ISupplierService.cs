@@ -1,4 +1,4 @@
-namespace Warehouse.Services.Suppliers;
+﻿namespace CargoHub.Services.Suppliers;
 
 using Dtos.Suppliers;
 

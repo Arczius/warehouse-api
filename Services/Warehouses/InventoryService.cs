@@ -1,4 +1,4 @@
-namespace Warehouse.Services.Warehouses;
+﻿namespace CargoHub.Services.Warehouses;
 
 using Data;
 using Dtos.Warehouses;

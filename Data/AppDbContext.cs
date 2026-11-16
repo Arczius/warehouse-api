@@ -1,4 +1,4 @@
-﻿namespace Warehouse.Data;
+﻿namespace CargoHub.Data;
 
 using Models.Auth;
 using Models.Orders;

@@ -1,4 +1,4 @@
-namespace Warehouse.Services.Orders;
+﻿namespace CargoHub.Services.Orders;
 
 using Dtos.Orders;
 

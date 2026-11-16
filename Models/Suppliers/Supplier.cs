@@ -1,4 +1,4 @@
-﻿namespace Warehouse.Models.Suppliers;
+﻿namespace CargoHub.Models.Suppliers;
 
 [Table("Supplier")]
 public class Supplier : IEntity
