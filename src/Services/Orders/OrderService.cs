@@ -93,7 +93,7 @@ public class OrderService : IOrderService
         Reference = order.Reference,
         OrderNumber = order.OrderNumber,
         OrderStatus = order.OrderStatus,
-        ShippingNotes = order.ShippingNotes,
+        ShippingNotes = order.ShippingNotes ?? string.Empty,
         CreatedAt = order.CreatedAt,
         UpdatedAt = order.UpdatedAt,
     };
