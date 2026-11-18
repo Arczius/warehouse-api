@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CargoHub.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CargoHub.IntegrationTests/CargoHub.IntegrationTests.csproj" />
+    <Project Path="tests/CargoHub.UnitTests/CargoHub.UnitTests.csproj" />
+  </Folder>
+</Solution>
