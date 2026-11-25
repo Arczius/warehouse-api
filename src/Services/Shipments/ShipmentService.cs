@@ -35,7 +35,7 @@ public class ShipmentService : IShipmentService
             ShipmentType = dto.ShipmentType,
             ShipmentStatus = dto.ShipmentStatus,
             CarrierName = dto.CarrierName,
-            ShipmentMethod = dto.ShipmentMethod,
+            ShippingMethod = dto.ShippingMethod,
             PaymentType = dto.PaymentType,
             CreatedAt = dto.CreatedAt,
             UpdatedAt = dto.UpdatedAt,
@@ -69,7 +69,7 @@ public class ShipmentService : IShipmentService
         shipment.ShipmentType = dto.ShipmentType;
         shipment.ShipmentStatus = dto.ShipmentStatus;
         shipment.CarrierName = dto.CarrierName;
-        shipment.ShipmentMethod = dto.ShipmentMethod;
+        shipment.ShippingMethod = dto.ShippingMethod;
         shipment.PaymentType = dto.PaymentType;
         shipment.CreatedAt = dto.CreatedAt;
         shipment.UpdatedAt = dto.UpdatedAt;
@@ -87,7 +87,7 @@ public class ShipmentService : IShipmentService
         ShipmentType = shipment.ShipmentType,
         ShipmentStatus = shipment.ShipmentStatus,
         CarrierName = shipment.CarrierName,
-        ShipmentMethod = shipment.ShipmentMethod,
+        ShippingMethod = shipment.ShippingMethod,
         PaymentType = shipment.PaymentType,
         CreatedAt = shipment.CreatedAt,
         UpdatedAt = shipment.UpdatedAt,

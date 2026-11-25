@@ -9,7 +9,7 @@ public record ShipmentDTO
     public string ShipmentType { get; init; } = string.Empty;
     public string ShipmentStatus { get; init; } = string.Empty;
     public string CarrierName { get; init; } = string.Empty;
-    public string ShipmentMethod { get; init; } = string.Empty;
+    public string ShippingMethod { get; init; } = string.Empty;
     public string PaymentType { get; init; } = string.Empty;
     public DateTime CreatedAt { get; init; }
     public DateTime UpdatedAt { get; init; }
@@ -23,7 +23,7 @@ public record CreateShipmentDTO
     public string ShipmentType { get; init; } = string.Empty;
     public string ShipmentStatus { get; init; } = string.Empty;
     public string CarrierName { get; init; } = string.Empty;
-    public string ShipmentMethod { get; init; } = string.Empty;
+    public string ShippingMethod { get; init; } = string.Empty;
     public string PaymentType { get; init; } = string.Empty;
     public DateTime CreatedAt { get; init; }
     public DateTime UpdatedAt { get; init; }
@@ -37,7 +37,7 @@ public record UpdateShipmentDTO
     public string ShipmentType { get; init; } = string.Empty;
     public string ShipmentStatus { get; init; } = string.Empty;
     public string CarrierName { get; init; } = string.Empty;
-    public string ShipmentMethod { get; init; } = string.Empty;
+    public string ShippingMethod { get; init; } = string.Empty;
     public string PaymentType { get; init; } = string.Empty;
     public DateTime CreatedAt { get; init; }
     public DateTime UpdatedAt { get; init; }
