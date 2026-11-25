@@ -1,2 +1,0 @@
-﻿namespace CargoHub.RouteGroups;
-
